@@ -321,9 +321,10 @@ class CurveModel:
 
         if fixed_params_initialize is not None:
             if not smart_initialize:
-                raise Warning(f"You passed in an initialization parameter "
-                              f"fixed_params_initialize {fixed_params_initialize} "
-                              f"but set smart_initialize=False. Will ignore fixed_params_initialize.")
+                print("error in smart_initialize")
+                #raise Warning(f"You passed in an initialization parameter " \
+                #             f"fixed_params_initialize {fixed_params_initialize} "
+                #              f"but set smart_initialize=False. Will ignore fixed_params_initialize.")
 
         if smart_init_options is not None:
             if options is None:
@@ -348,8 +349,9 @@ class CurveModel:
                 )
             )
             fe_init, re_init = compute_starting_params(fe_dict)
-            print(f"Overriding fe_init with {fe_init}.")
-            print(f"Overriding re_init with {re_init}.")
+            #print(f"Overriding fe_init with {fe_init}.")
+            #print(f"Overriding re_init with {re_init}.")
+            print("Overriding")
 
         x0 = np.hstack([fe_init, re_init])
         if fe_bounds is None:

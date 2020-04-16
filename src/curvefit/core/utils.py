@@ -73,7 +73,7 @@ def get_derivative_of_column_in_ln_space(df, col_obs, col_t, col_grp):
     """
     df.sort_values([col_grp, col_t], inplace=True)
     groups = df[col_grp].unique()
-    new_col = f'd {col_obs}'
+    new_col = "d "+ str(col_obs)
 
     # partition the data frame by group
     df_all = {}
